@@ -2,161 +2,161 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7면조 사람들</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7면조 사람들</title>
 
-  <!-- 부트스트랩 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <!-- JQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 부트스트랩 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <script>
-    // 이민호 담당구역 시작----------------------------------------------------------------------------------------
-    // 팀 텍스트
-    // [이니셜, 이름, 설명, Github링크, Blog링크]
-    const ssh = ['ssh', '신성훈', 'ISFJ인 신성훈', 'https://github.com/seonghoon90', 'https://velog.io/@dotofi'];
-    const pmh = ['pmh', '박민혁', 'INTP인 박민혁', 'https://github.com/hanraeul', 'https://velog.io/@hanraeul'];
-    const sdo = ['sdo', '신다온', 'INTJ인 신다온', 'https://github.com/shin-daon', 'https://shindaon.tistory.com/'];
-    const hjb = ['hjb', '홍준빈', 'INFJ인 홍준빈', 'https://github.com/Hongjunbin', 'https://bin2dev.tistory.com/'];
-    const lmh = ['lmh', '이민호', 'ESTP인 이민호', 'https://github.com/2minus', 'https://velog.io/@2_minus'];
+    <script>
+        // 이민호 담당구역 시작----------------------------------------------------------------------------------------
+        // 팀 텍스트
+        // [이니셜, 이름, 설명, Github링크, Blog링크]
+        const ssh = ['ssh', '신성훈', 'ISFJ인 신성훈', 'https://github.com/seonghoon90', 'https://velog.io/@dotofi'];
+        const pmh = ['pmh', '박민혁', 'INTP인 박민혁', 'https://github.com/hanraeul', 'https://velog.io/@hanraeul'];
+        const sdo = ['sdo', '신다온', 'INTJ인 신다온', 'https://github.com/shin-daon', 'https://shindaon.tistory.com/'];
+        const hjb = ['hjb', '홍준빈', 'INFJ인 홍준빈', 'https://github.com/Hongjunbin', 'https://bin2dev.tistory.com/'];
+        const lmh = ['lmh', '이민호', 'ESTP인 이민호', 'https://github.com/2minus', 'https://velog.io/@2_minus'];
 
-    const team_l = [ssh, pmh, sdo, hjb, lmh];
+        const team_l = [ssh, pmh, sdo, hjb, lmh];
 
-    const text_l = [
-      "팀원이 당신과 잘 맞을수도 있습니닷!",
-      "팀원과 같은 성향입니다. 공통점을 찾으셨네요 축하드립니다!",
-      "팀원과 mbti는 아무 관련 없지만 당신과 잘 맞을수도 있을것 같은 느낌적인 느낌이 없지않아 있는 예감"
-    ];
-    // mbti 텍스트
-    const mbti_l = ['ESTP', 'ESFJ', 'ESFP', 'ESTJ', 'ENTP', 'ENTJ', 'ENFP', 'ENFJ',
-      'ISTP', 'ISTJ', 'ISFP', 'ISFJ', 'INTP', 'INTJ', 'INFP', 'INFJ'];
+        const text_l = [
+            "팀원이 당신과 잘 맞을수도 있습니닷!",
+            "팀원과 같은 성향입니다. 공통점을 찾으셨네요 축하드립니다!",
+            "팀원과 mbti는 아무 관련 없지만 당신과 잘 맞을수도 있을것 같은 느낌적인 느낌이 없지않아 있는 예감"
+        ];
+        // mbti 텍스트
+        const mbti_l = ['ESTP', 'ESFJ', 'ESFP', 'ESTJ', 'ENTP', 'ENTJ', 'ENFP', 'ENFJ',
+            'ISTP', 'ISTJ', 'ISFP', 'ISFJ', 'INTP', 'INTJ', 'INFP', 'INFJ'];
 
-    const title_dic = {
-      'ESTP': "사업가 | ESTP", 'ESFJ': "집정관 | ESFJ", 'ESFP': "연예인 | ESFP", 'ESTJ': "경영자 | ESTJ", 'ENTP': "", 'ENTJ': "통솔자 | ENTJ", 'ENFP': "활동가 | ENFP", 'ENFJ': "선도자 | ENTJ",
-      'ISTP': "장인 | ISTP", 'ISTJ': "현실주의자 | ISTJ", 'ISFP': "모험가 | ISFP", 'ISFJ': "", 'INTP': "논리술사 | INTP", 'INTJ': "전략가 | INTJ", 'INFP': "중재자 | INFP", 'INFJ': "옹호자 | INFJ"
-    };
-
-    const de_dic = {
-      'ESTP': "사업가(ESTP)는 항상 주변 사람에게 영향력을 행사하곤 합니다. 파티에서 가는 곳마다 사람들에게 둘러싸여 있는 사람을 발견한다면 바로 사업가일 것입니다. 이들은 직설적인 유머 감각을 지니고 있으며 수많은 사람의 관심을 받는 일을 즐깁니다. 한 마디로 사회자가 무대로 올라올 사람을 찾을 때 직접 무대로 올라가는 성격이라고 할 수 있습니다. 사업가는 이론적이고 추상적인 개념과 지루한 토론에는 크게 관심이 없습니다. 지능이 높고 활기찬 대화를 유지할 수 있는 성격이기는 하지만, 현실적인 주제에 대해 이야기하고 직접 행동하기를 원하는 성격이기 때문입니다. 이들은 계획을 심사숙고하기보다는 먼저 행동하고 시행착오를 겪으며 실수를 바로잡는 방식을 선호합니다.",
-      'ESFJ': "집정관(ESFJ)에게 인생이란 다른 사람과 함께할 때 가장 달콤한 것입니다. 이들은 많은 공동체의 기반이 되며 친구와 연인과 이웃을 열린 마음으로 대합니다. 집정관이 모든 사람을 좋아하거나 무한한 관용을 지닌 것은 아닙니다. 하지만 이들은 친절하고 예의 바른 태도가 도움이 된다고 믿고 있으며 주변 사람들에게 강한 책임감을 느끼곤 합니다. 또한 관대하고 신뢰할 수 있는 성격으로 작은 일이든 큰 일이든 가족과 공동체를 하나로 모으기 위해 스스로 책임을 짊어질 때가 많습니다.",
-      'ESFP': "연예인(ESFP)은 즉흥적으로 노래하고 춤을 추는 일을 즐기는 성격입니다. 이들은 지금 이 순간을 즐기며 남들도 자신과 같은 즐거움을 느낄 수 있기를 바랍니다. 또한 남을 응원하는 데 기꺼이 시간과 에너지를 투자하며, 매우 매력적인 방식으로 다른 사람의 기운을 북돋곤 합니다.",
-      'ESTJ': "경영자(ESTJ)는 전통과 질서를 중시하는 성격으로, 자신이 생각하는 옳고 그름과 사회적 기준에 따라 가족과 공동체가 화합할 수 있도록 노력합니다. 이들은 정직과 헌신과 존엄성을 중시하며, 어려운 길을 기꺼이 앞장서고 다른 사람들에게 명확한 조언과 지도를 제공합니다. 이들은 사람들이 화합하도록 하는 일에서 자부심을 느끼며, 모든 사람이 지역 축제를 즐길 수 있도록 노력하거나 가족과 공동체의 전통적인 가치관을 지키는 역할 등을 맡곤 합니다.",
-      'ENTP': "변론가(ENTP)는 두뇌 회전이 빠르고 대담한 성격으로 현재 상황에 이의를 제기하는 데 거리낌이 없습니다. 변론가는 어떤 의견이나 사람에 반대하는 일을 두려워하지 않으며, 논란이 될 만한 주제에 대해 격렬하게 논쟁하는 일을 즐깁니다. 그렇다고 변론가가 반론을 제기하는 데만 관심이 있거나 악의를 지닌 것은 아닙니다. 사실 변론가는 지식이 풍부하고 호기심이 넘치며 활기찬 유머 감각으로 다른 사람을 즐겁게 할 수 있는 성격입니다. 다만 대부분의 성격과 달리 논쟁에서 즐거움을 찾는 성향이 있을 뿐입니다.",
-      'ENTJ': "통솔자(ENTJ)는 타고난 리더라고 할 수 있습니다. 이들은 카리스마와 자신감을 지니고 있으며 자신의 권한을 이용해 사람들이 공통된 목표를 위해 함께 노력하도록 이끕니다. 또한 이들은 냉철한 이성을 지닌 것으로 유명하며 자신이 원하는 것을 성취하기 위해 열정과 결단력과 날카로운 지적 능력을 활용합니다. 이들은 전체 인구의 3%에 불과하지만, 다른 많은 성격을 압도하는 존재감을 뽐내며 다양한 비즈니스와 단체를 이끄는 역할을 할 때가 많습니다.",
-      'ENFP': "활동가(ENFP)는 진정으로 자유로운 영혼이라고 할 수 있으며 외향적이고 솔직하며 개방적인 성격입니다. 이들은 활기차고 낙관적인 태도로 삶을 대하며 다른 사람들 사이에서 돋보이곤 합니다. 그러나 신나는 인생을 보내는 것처럼 보인다고 해서 즐거움만을 좇는 성격은 아니며, 다른 사람과 감정적으로 깊고 의미 있는 관계를 맺는 일을 추구합니다.",
-      'ENFJ': "선도자(ENFJ)는 삶에서 위대한 사명을 위해 힘써야 한다는 느낌을 받곤 합니다. 사려 깊고 이상주의적 성향을 지닌 선도자는 다른 사람과 주변 세상에 긍정적인 영향력을 발휘하기 위해 최선을 다하며, 어려운 상황에서도 올바른 일을 할 기회를 마다하지 않습니다.",
-      'ISTP': "장인(ISTP)은 이성과 호기심을 통해 세상을 바라보며 눈과 손으로 직접 탐구하는 일을 즐깁니다. 이들은 타고난 손기술을 지니고 있으며, 다양한 프로젝트에서 유용하고 재미있는 물건을 만들어 내고 주변 환경에서 배울 점을 찾습니다. 장인은 보통 기술자나 엔지니어로 일하는 경우가 많으며 물건을 직접 분해하고 조립해 개선하는 일을 즐깁니다.",
-      'ISTJ': "현실주의자(ISTJ)는 진솔하게 행동하는 자신의 모습에서 자부심을 느끼며, 자기 생각을 솔직하게 이야기하고 어떤 것에 헌신하기로 한 경우 최선을 다합니다. 현실주의자는 인구의 상당 부분을 차지합니다. 화려한 삶이나 다른 사람의 주의를 끄는 일에는 관심이 없으며 안정된 사회를 위해 자신의 몫보다 많은 기여를 하곤 합니다. 이들은 가족이나 주변 사람들로부터 믿음직한 사람이라는 평판을 받을 때가 많으며, 현실 감각이 뛰어나 스트레스가 극심한 상황에서도 현실적이고 논리적인 태도를 유지하는 사람으로 인정받곤 합니다.",
-      'ISFP': "모험가(ISFP)는 진정한 의미의 예술가라고 할 수 있습니다. 하지만 모험가라고 반드시 예술 업계에만 종사하는 것은 아닙니다. 이들에게는 삶 자체가 자신을 표현하기 위한 캔버스이기 때문입니다. 이들은 입는 옷부터 여가 시간을 보내는 방식까지 다양한 측면에서 자신의 독특한 개성을 생생히 드러냅니다. 모든 모험가는 각자 독특한 성격을 지니고 있습니다. 이들은 호기심이 많고 새로운 것을 추구하는 성격으로 다양한 분야에 관심과 열정을 보일 때가 많습니다. 모험가는 탐험가적 성향과 일상 생활에서 즐거움을 찾을 수 있는 능력을 지니고 있는 매우 흥미로운 성격이라고 할 수 있습니다. 그러나 보통 자신의 놀라운 개성에 자만하는 대신 자신이 하고 싶은 일을 할 뿐이라고 겸손하게 생각하곤 합니다.",
-      'ISFJ': "수호자(ISFJ)는 겸손한 자세로 세상을 지탱하는 역할을 합니다. 이들은 근면하고 헌신적인 성격으로 주변 사람들에 대한 깊은 책임감을 느낍니다. 이들은 마감 기한을 철저히 지키고 동료와 친구의 생일과 기념일을 챙기며, 기존 질서를 유지하고 주변 사람을 배려하는 동시에 기꺼이 도움의 손길을 건넵니다. 또한 감사를 요구하기보다는 뒤에서 묵묵히 헌신하는 성격이라고 할 수 있습니다. 수호자는 유능하고 긍정적인 성격으로 다양한 방면에서 역량을 발휘합니다. 또한 세심하고 배려심이 넘치며 분석 능력과 세부 사항 파악 능력도 뛰어납니다. 그리고 차분한 성격인 동시에 대인 관계 능력도 뛰어나며, 이 덕분에 여러 사람과 깊은 관계를 맺을 가능성도 큽니다. 이들의 다양한 장점은 시너지 효과를 내며 일상생활에서도 빛을 발하곤 합니다.",
-      'INTP': '논리술사(INTP)는 자신의 독특한 관점과 활기 넘치는 지성에 자부심을 느끼며, 우주의 미스터리에 대해 깊이 생각하곤 합니다. 유명한 철학자와 과학자 중 논리술사 성격이 많은 것도 이 때문일 것 입니다. 논리술사는 상당히 희귀한 성격이지만 뛰어난 창의성과 독창성으로 많은 사람 사이에서 존재감을 드러내곤 합니다.이렇게 논리적이면서도 마술사와 같은 창의력을 발휘하는 성격이기에 ‘논리술사’라고 부르게 되었습니다.',
-      'INTJ': "최고가 되는 것은 외로운 일입니다. 매우 희귀한 성격이면서도 뛰어난 능력을 지닌 전략가(INTJ)는 이러한 말의 의미를 잘 알고 있습니다. 전략가는 이성적이면서도 두뇌 회전이 빠른 성격으로, 자신의 뛰어난 사고 능력을 자랑스러워하며 거짓말과 위선을 꿰뚫어 보는 능력이 있습니다. 하지만 이로 인해 끊임없이 생각하고 주변의 모든 것을 분석하려는 자신의 성향을 이해할 수 있는 사람을 찾는 데 어려움을 겪기도 합니다.",
-      'INFP': "중재자(INFP)는 언뜻 보기에 조용하고 자신을 내세우지 않는 것처럼 보이지만, 사실은 에너지와 열정이 넘치는 마음을 지닌 성격입니다. 이들은 창의적이고 상상력이 뛰어나며 몽상을 즐기는 성격으로 머릿속에서 수많은 이야기를 만들어 내곤 합니다. 또한 음악과 예술과 자연에 대한 감수성이 뛰어나며 다른 사람의 감정을 빠르게 알아차립니다. 중재자는 이상주의적이고 공감 능력이 높으며 깊고 의미 있는 관계를 원하고 다른 사람을 도와야 한다는 사명감을 느끼곤 합니다. 그러나 전체 인구에서 큰 비중을 차지하지 않는 성격이기 때문에 외로움을 느끼거나 존재감을 드러내지 못하는 때가 있으며, 자신의 독특한 강점을 인정하지 않는 세상에서 방황하는 느낌을 받을 수도 있습니다.",
-      'INFJ': "옹호자(INFJ)는 매우 희귀한 성격임에도 불구하고 세상에 큰 영향력을 발휘하곤 합니다. 이들은 이상주의적이고 원칙주의적인 성격으로, 삶에 순응하는 대신 삶에 맞서 변화를 만들어 내고자 합니다. 이들에게 성공이란 돈이나 지위가 아니라 자아를 실현하고 다른 사람을 도우며 세상에서 선을 실천하는 일입니다. 원대한 목표와 야망을 품고 있다고 해서 옹호자가 몽상가와 같은 성격이라는 뜻은 아닙니다. 이들은 원칙과 완벽함을 중시하며 자신이 옳다고 믿는 일을 끝내기 전에는 만족하지 않습니다. 또한 매우 양심적인 성격으로 자신의 확실한 가치관에 따라 인생을 살아가며, 다른 사람이나 사회의 가치를 따르는 대신 자신의 지혜와 직관을 통해 정말로 중요한 가치를 찾기 위해 노력합니다."
-    };
-
-    const mbtichar = ['E', 'I', 'S', 'N', 'T', 'F', 'P', 'J'];
-
-    function verifymbti(res) {
-      var flague = true;
-      let i = 0;
-      let j = 0;
-      while (flague && i < res.length) {
-        console.log(res[i]);
-        if (res[i] == mbtichar[j] || res[i] == mbtichar[j + 1]) {
-          i++;
-          j++;
-          j++;
-        } else {
-          var res = "error";
-          flague = false;
-        }
-      }
-      return res;
-    };
-    // mbti를 입력받는 부분
-    function ipmbti() {
-      var res = $("#umbti").val().toUpperCase();
-      res = verifymbti(res);
-      console.log(res);
-      if (res.length > 4) {
-        alert("제대로 된 mbti가 아닌것 같은데요!");
-      } else {
-        alert("당신은 흥미로운 " + res + " 시군요!");
-        opresult(res);
-      };
-    };
-    // 입력된 값(mbti)로 html을 생성하는 함수
-    function opresult(res) {
-      $("#initres").toggle();
-      // 입력된 mbti를 바탕으로 저장된 변수를 불러옴
-      let mbtiimgdir = "./img/" + res + ".png";
-      let title = title_dic[res];
-      let detail = de_dic[res];
-      var rand = Math.random(); // 확률변수 생성
-
-      var member1 = [];
-      var m1de = text_l[0];
-      var member2 = [];
-      var m2de = text_l[0];
-      // 입력된 mbti와 관련된 팀원을 불러옴
-      // 같은 mbti 팀원
-      if (res == "ISFJ" || res == "INTP" || res == "ESTP" || res == "INTJ" || res == "INFJ") {
-        var m1de = text_l[1];
-        if (res == "ISFJ") {
-          var member1 = ssh;
-          var member2 = lmh;
-        } else if (res == "INTP") {
-          var member1 = pmh;
-        } else if (res == "ESTP") {
-          var member1 = lmh;
-          var member2 = ssh;
-        } else if (res == "INTJ") {
-          var member1 = sdo;
-        } else {
-          var member1 = hjb;
+        const title_dic = {
+            'ESTP': "사업가 | ESTP", 'ESFJ': "집정관 | ESFJ", 'ESFP': "연예인 | ESFP", 'ESTJ': "경영자 | ESTJ", 'ENTP': "", 'ENTJ': "통솔자 | ENTJ", 'ENFP': "활동가 | ENFP", 'ENFJ': "선도자 | ENTJ",
+            'ISTP': "장인 | ISTP", 'ISTJ': "현실주의자 | ISTJ", 'ISFP': "모험가 | ISFP", 'ISFJ': "", 'INTP': "논리술사 | INTP", 'INTJ': "전략가 | INTJ", 'INFP': "중재자 | INFP", 'INFJ': "옹호자 | INFJ"
         };
-        // 합이 잘맞는 팀원
-      } else if (res == "ESFP") {
-        var member1 = ssh;
-      } else if (res == "ENFJ" || res == "ENTJ") {
-        var member1 = pmh;
-      } else if (res == "ISTJ") {
-        var member1 = lmh;
-      } else if (res == "ENFP" || res == "ENTP") {
-        var member1 = sdo;
-        var member2 = hjb;
-      };
-      // 임의로 빈자리 메꾸기
-      if (member1.length == 0) {
-        var m1de = text_l[2];
-        var m2de = text_l[2];
-        let randIndex = Math.floor(rand * team_l.length);
-        var member1 = team_l[randIndex];
-        team_l.splice(randIndex, 1);
-        var member2 = team_l[randIndex];
-      } else if (member1.length != 0 && member2.length == 0) {
-        var m2de = text_l[2];
-        let randIndex = Math.floor(rand * team_l.length);
-        var member2 = team_l[randIndex];
-      };
+
+        const de_dic = {
+            'ESTP': "사업가(ESTP)는 항상 주변 사람에게 영향력을 행사하곤 합니다. 파티에서 가는 곳마다 사람들에게 둘러싸여 있는 사람을 발견한다면 바로 사업가일 것입니다. 이들은 직설적인 유머 감각을 지니고 있으며 수많은 사람의 관심을 받는 일을 즐깁니다. 한 마디로 사회자가 무대로 올라올 사람을 찾을 때 직접 무대로 올라가는 성격이라고 할 수 있습니다. 사업가는 이론적이고 추상적인 개념과 지루한 토론에는 크게 관심이 없습니다. 지능이 높고 활기찬 대화를 유지할 수 있는 성격이기는 하지만, 현실적인 주제에 대해 이야기하고 직접 행동하기를 원하는 성격이기 때문입니다. 이들은 계획을 심사숙고하기보다는 먼저 행동하고 시행착오를 겪으며 실수를 바로잡는 방식을 선호합니다.",
+            'ESFJ': "집정관(ESFJ)에게 인생이란 다른 사람과 함께할 때 가장 달콤한 것입니다. 이들은 많은 공동체의 기반이 되며 친구와 연인과 이웃을 열린 마음으로 대합니다. 집정관이 모든 사람을 좋아하거나 무한한 관용을 지닌 것은 아닙니다. 하지만 이들은 친절하고 예의 바른 태도가 도움이 된다고 믿고 있으며 주변 사람들에게 강한 책임감을 느끼곤 합니다. 또한 관대하고 신뢰할 수 있는 성격으로 작은 일이든 큰 일이든 가족과 공동체를 하나로 모으기 위해 스스로 책임을 짊어질 때가 많습니다.",
+            'ESFP': "연예인(ESFP)은 즉흥적으로 노래하고 춤을 추는 일을 즐기는 성격입니다. 이들은 지금 이 순간을 즐기며 남들도 자신과 같은 즐거움을 느낄 수 있기를 바랍니다. 또한 남을 응원하는 데 기꺼이 시간과 에너지를 투자하며, 매우 매력적인 방식으로 다른 사람의 기운을 북돋곤 합니다.",
+            'ESTJ': "경영자(ESTJ)는 전통과 질서를 중시하는 성격으로, 자신이 생각하는 옳고 그름과 사회적 기준에 따라 가족과 공동체가 화합할 수 있도록 노력합니다. 이들은 정직과 헌신과 존엄성을 중시하며, 어려운 길을 기꺼이 앞장서고 다른 사람들에게 명확한 조언과 지도를 제공합니다. 이들은 사람들이 화합하도록 하는 일에서 자부심을 느끼며, 모든 사람이 지역 축제를 즐길 수 있도록 노력하거나 가족과 공동체의 전통적인 가치관을 지키는 역할 등을 맡곤 합니다.",
+            'ENTP': "변론가(ENTP)는 두뇌 회전이 빠르고 대담한 성격으로 현재 상황에 이의를 제기하는 데 거리낌이 없습니다. 변론가는 어떤 의견이나 사람에 반대하는 일을 두려워하지 않으며, 논란이 될 만한 주제에 대해 격렬하게 논쟁하는 일을 즐깁니다. 그렇다고 변론가가 반론을 제기하는 데만 관심이 있거나 악의를 지닌 것은 아닙니다. 사실 변론가는 지식이 풍부하고 호기심이 넘치며 활기찬 유머 감각으로 다른 사람을 즐겁게 할 수 있는 성격입니다. 다만 대부분의 성격과 달리 논쟁에서 즐거움을 찾는 성향이 있을 뿐입니다.",
+            'ENTJ': "통솔자(ENTJ)는 타고난 리더라고 할 수 있습니다. 이들은 카리스마와 자신감을 지니고 있으며 자신의 권한을 이용해 사람들이 공통된 목표를 위해 함께 노력하도록 이끕니다. 또한 이들은 냉철한 이성을 지닌 것으로 유명하며 자신이 원하는 것을 성취하기 위해 열정과 결단력과 날카로운 지적 능력을 활용합니다. 이들은 전체 인구의 3%에 불과하지만, 다른 많은 성격을 압도하는 존재감을 뽐내며 다양한 비즈니스와 단체를 이끄는 역할을 할 때가 많습니다.",
+            'ENFP': "활동가(ENFP)는 진정으로 자유로운 영혼이라고 할 수 있으며 외향적이고 솔직하며 개방적인 성격입니다. 이들은 활기차고 낙관적인 태도로 삶을 대하며 다른 사람들 사이에서 돋보이곤 합니다. 그러나 신나는 인생을 보내는 것처럼 보인다고 해서 즐거움만을 좇는 성격은 아니며, 다른 사람과 감정적으로 깊고 의미 있는 관계를 맺는 일을 추구합니다.",
+            'ENFJ': "선도자(ENFJ)는 삶에서 위대한 사명을 위해 힘써야 한다는 느낌을 받곤 합니다. 사려 깊고 이상주의적 성향을 지닌 선도자는 다른 사람과 주변 세상에 긍정적인 영향력을 발휘하기 위해 최선을 다하며, 어려운 상황에서도 올바른 일을 할 기회를 마다하지 않습니다.",
+            'ISTP': "장인(ISTP)은 이성과 호기심을 통해 세상을 바라보며 눈과 손으로 직접 탐구하는 일을 즐깁니다. 이들은 타고난 손기술을 지니고 있으며, 다양한 프로젝트에서 유용하고 재미있는 물건을 만들어 내고 주변 환경에서 배울 점을 찾습니다. 장인은 보통 기술자나 엔지니어로 일하는 경우가 많으며 물건을 직접 분해하고 조립해 개선하는 일을 즐깁니다.",
+            'ISTJ': "현실주의자(ISTJ)는 진솔하게 행동하는 자신의 모습에서 자부심을 느끼며, 자기 생각을 솔직하게 이야기하고 어떤 것에 헌신하기로 한 경우 최선을 다합니다. 현실주의자는 인구의 상당 부분을 차지합니다. 화려한 삶이나 다른 사람의 주의를 끄는 일에는 관심이 없으며 안정된 사회를 위해 자신의 몫보다 많은 기여를 하곤 합니다. 이들은 가족이나 주변 사람들로부터 믿음직한 사람이라는 평판을 받을 때가 많으며, 현실 감각이 뛰어나 스트레스가 극심한 상황에서도 현실적이고 논리적인 태도를 유지하는 사람으로 인정받곤 합니다.",
+            'ISFP': "모험가(ISFP)는 진정한 의미의 예술가라고 할 수 있습니다. 하지만 모험가라고 반드시 예술 업계에만 종사하는 것은 아닙니다. 이들에게는 삶 자체가 자신을 표현하기 위한 캔버스이기 때문입니다. 이들은 입는 옷부터 여가 시간을 보내는 방식까지 다양한 측면에서 자신의 독특한 개성을 생생히 드러냅니다. 모든 모험가는 각자 독특한 성격을 지니고 있습니다. 이들은 호기심이 많고 새로운 것을 추구하는 성격으로 다양한 분야에 관심과 열정을 보일 때가 많습니다. 모험가는 탐험가적 성향과 일상 생활에서 즐거움을 찾을 수 있는 능력을 지니고 있는 매우 흥미로운 성격이라고 할 수 있습니다. 그러나 보통 자신의 놀라운 개성에 자만하는 대신 자신이 하고 싶은 일을 할 뿐이라고 겸손하게 생각하곤 합니다.",
+            'ISFJ': "수호자(ISFJ)는 겸손한 자세로 세상을 지탱하는 역할을 합니다. 이들은 근면하고 헌신적인 성격으로 주변 사람들에 대한 깊은 책임감을 느낍니다. 이들은 마감 기한을 철저히 지키고 동료와 친구의 생일과 기념일을 챙기며, 기존 질서를 유지하고 주변 사람을 배려하는 동시에 기꺼이 도움의 손길을 건넵니다. 또한 감사를 요구하기보다는 뒤에서 묵묵히 헌신하는 성격이라고 할 수 있습니다. 수호자는 유능하고 긍정적인 성격으로 다양한 방면에서 역량을 발휘합니다. 또한 세심하고 배려심이 넘치며 분석 능력과 세부 사항 파악 능력도 뛰어납니다. 그리고 차분한 성격인 동시에 대인 관계 능력도 뛰어나며, 이 덕분에 여러 사람과 깊은 관계를 맺을 가능성도 큽니다. 이들의 다양한 장점은 시너지 효과를 내며 일상생활에서도 빛을 발하곤 합니다.",
+            'INTP': '논리술사(INTP)는 자신의 독특한 관점과 활기 넘치는 지성에 자부심을 느끼며, 우주의 미스터리에 대해 깊이 생각하곤 합니다. 유명한 철학자와 과학자 중 논리술사 성격이 많은 것도 이 때문일 것 입니다. 논리술사는 상당히 희귀한 성격이지만 뛰어난 창의성과 독창성으로 많은 사람 사이에서 존재감을 드러내곤 합니다.이렇게 논리적이면서도 마술사와 같은 창의력을 발휘하는 성격이기에 ‘논리술사’라고 부르게 되었습니다.',
+            'INTJ': "최고가 되는 것은 외로운 일입니다. 매우 희귀한 성격이면서도 뛰어난 능력을 지닌 전략가(INTJ)는 이러한 말의 의미를 잘 알고 있습니다. 전략가는 이성적이면서도 두뇌 회전이 빠른 성격으로, 자신의 뛰어난 사고 능력을 자랑스러워하며 거짓말과 위선을 꿰뚫어 보는 능력이 있습니다. 하지만 이로 인해 끊임없이 생각하고 주변의 모든 것을 분석하려는 자신의 성향을 이해할 수 있는 사람을 찾는 데 어려움을 겪기도 합니다.",
+            'INFP': "중재자(INFP)는 언뜻 보기에 조용하고 자신을 내세우지 않는 것처럼 보이지만, 사실은 에너지와 열정이 넘치는 마음을 지닌 성격입니다. 이들은 창의적이고 상상력이 뛰어나며 몽상을 즐기는 성격으로 머릿속에서 수많은 이야기를 만들어 내곤 합니다. 또한 음악과 예술과 자연에 대한 감수성이 뛰어나며 다른 사람의 감정을 빠르게 알아차립니다. 중재자는 이상주의적이고 공감 능력이 높으며 깊고 의미 있는 관계를 원하고 다른 사람을 도와야 한다는 사명감을 느끼곤 합니다. 그러나 전체 인구에서 큰 비중을 차지하지 않는 성격이기 때문에 외로움을 느끼거나 존재감을 드러내지 못하는 때가 있으며, 자신의 독특한 강점을 인정하지 않는 세상에서 방황하는 느낌을 받을 수도 있습니다.",
+            'INFJ': "옹호자(INFJ)는 매우 희귀한 성격임에도 불구하고 세상에 큰 영향력을 발휘하곤 합니다. 이들은 이상주의적이고 원칙주의적인 성격으로, 삶에 순응하는 대신 삶에 맞서 변화를 만들어 내고자 합니다. 이들에게 성공이란 돈이나 지위가 아니라 자아를 실현하고 다른 사람을 도우며 세상에서 선을 실천하는 일입니다. 원대한 목표와 야망을 품고 있다고 해서 옹호자가 몽상가와 같은 성격이라는 뜻은 아닙니다. 이들은 원칙과 완벽함을 중시하며 자신이 옳다고 믿는 일을 끝내기 전에는 만족하지 않습니다. 또한 매우 양심적인 성격으로 자신의 확실한 가치관에 따라 인생을 살아가며, 다른 사람이나 사회의 가치를 따르는 대신 자신의 지혜와 직관을 통해 정말로 중요한 가치를 찾기 위해 노력합니다."
+        };
+
+        const mbtichar = ['E', 'I', 'S', 'N', 'T', 'F', 'P', 'J'];
+
+        function verifymbti(res) {
+            var flague = true;
+            let i = 0;
+            let j = 0;
+            while (flague && i < res.length) {
+                console.log(res[i]);
+                if (res[i] == mbtichar[j] || res[i] == mbtichar[j + 1]) {
+                    i++;
+                    j++;
+                    j++;
+                } else {
+                    var res = "error";
+                    flague = false;
+                }
+            }
+            return res;
+        };
+        // mbti를 입력받는 부분
+        function ipmbti() {
+            var res = $("#umbti").val().toUpperCase();
+            res = verifymbti(res);
+            console.log(res);
+            if (res.length > 4) {
+                alert("제대로 된 mbti가 아닌것 같은데요!");
+            } else {
+                alert("당신은 흥미로운 " + res + " 시군요!");
+                opresult(res);
+            };
+        };
+        // 입력된 값(mbti)로 html을 생성하는 함수
+        function opresult(res) {
+            $("#initres").toggle();
+            // 입력된 mbti를 바탕으로 저장된 변수를 불러옴
+            let mbtiimgdir = "./img/" + res + ".png";
+            let title = title_dic[res];
+            let detail = de_dic[res];
+            var rand = Math.random(); // 확률변수 생성
+
+            var member1 = [];
+            var m1de = text_l[0];
+            var member2 = [];
+            var m2de = text_l[0];
+            // 입력된 mbti와 관련된 팀원을 불러옴
+            // 같은 mbti 팀원
+            if (res == "ISFJ" || res == "INTP" || res == "ESTP" || res == "INTJ" || res == "INFJ") {
+                var m1de = text_l[1];
+                if (res == "ISFJ") {
+                    var member1 = ssh;
+                    var member2 = lmh;
+                } else if (res == "INTP") {
+                    var member1 = pmh;
+                } else if (res == "ESTP") {
+                    var member1 = lmh;
+                    var member2 = ssh;
+                } else if (res == "INTJ") {
+                    var member1 = sdo;
+                } else {
+                    var member1 = hjb;
+                };
+                // 합이 잘맞는 팀원
+            } else if (res == "ESFP") {
+                var member1 = ssh;
+            } else if (res == "ENFJ" || res == "ENTJ") {
+                var member1 = pmh;
+            } else if (res == "ISTJ") {
+                var member1 = lmh;
+            } else if (res == "ENFP" || res == "ENTP") {
+                var member1 = sdo;
+                var member2 = hjb;
+            };
+            // 임의로 빈자리 메꾸기
+            if (member1.length == 0) {
+                var m1de = text_l[2];
+                var m2de = text_l[2];
+                let randIndex = Math.floor(rand * team_l.length);
+                var member1 = team_l[randIndex];
+                team_l.splice(randIndex, 1);
+                var member2 = team_l[randIndex];
+            } else if (member1.length != 0 && member2.length == 0) {
+                var m2de = text_l[2];
+                let randIndex = Math.floor(rand * team_l.length);
+                var member2 = team_l[randIndex];
+            };
 
 
-      let member1imgdir = "./img/" + member1[0] + ".jpg";
-      let member1name = member1[1];
-      let member1detail = member1[2];
-      let member1glink = member1[3];
-      let member1blink = member1[4];
+            let member1imgdir = "./img/" + member1[0] + ".jpg";
+            let member1name = member1[1];
+            let member1detail = member1[2];
+            let member1glink = member1[3];
+            let member1blink = member1[4];
 
-      let member2imgdir = "./img/" + member2[0] + ".jpg";
-      let member2name = member2[1];
-      let member2detail = member2[2];
-      let member2glink = member2[3];
-      let member2blink = member2[4];
+            let member2imgdir = "./img/" + member2[0] + ".jpg";
+            let member2name = member2[1];
+            let member2detail = member2[2];
+            let member2glink = member2[3];
+            let member2blink = member2[4];
 
-      let temp_html = `<div id="altres">
+            let temp_html = `<div id="altres">
                     <div class="card bg-transparent border-light mb-3">
                         <img src=${mbtiimgdir} class="card-img-top" alt="...">
                         <div class="card-body">
@@ -194,170 +194,6 @@
                         </div>
                     </div>
                 </div>`;
-
-      $("#mbtiresult").append(temp_html);
-    }
-    // 이민호 담당구역 끝----------------------------------------------------------------------------------------
-  </script>
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-
-    * {
-      .nanum-gothic-regular {
-        font-family: "Nanum Gothic", sans-serif;
-        font-weight: normal;
-        font-style: normal;
-      }
-    }
-
-    #title {
-      margin-left: 30px;
-      margin-bottom: 8px;
-    }
-
-    /* 이민호 담당구역 시작 */
-    .mbtiBlock {
-      background-color: transparent;
-    }
-
-    .cards {
-      margin: auto auto auto auto;
-
-      align-items: center;
-      flex-direction: row;
-      display: flex;
-      justify-content: center;
-
-      height: 1000px;
-    }
-
-    .gate {
-      background-image: linear-gradient(to right top,
-          rgb(132, 94, 194), rgb(214, 93, 177), rgb(255, 111, 145), rgb(255, 150, 113), rgb(255, 199, 95), rgb(249, 248, 113));
-
-      border: 3px solid white;
-      padding: 15px;
-      border-radius: 20px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      margin: auto 10px auto 10px;
-      min-width: 35%;
-      max-width: 60%;
-      max-height: 1000px;
-    }
-
-    .gate-title {
-      margin-top: 20px;
-    }
-
-    #confirmbtn {
-      margin: 30px auto auto auto;
-    }
-
-    /* 이민호 담당구역 끝 */
-    /* 프로필 이미지*/
-    .team-introduction {
-      margin: auto auto 20px auto;
-      height: 1100px;
-      width: 1500px;
-      display: flex;
-    }
-
-    .rigth {
-      width: 300px;
-      height: 300px;
-      border: 1px solid black;
-      float: left;
-      box-sizing: border-box;
-    }
-
-    .cardbox {
-      width: 700px;
-      float: left;
-      margin: 20px;
-    }
-
-    .team-introduction img {
-      border-radius: 50%;
-      /* 이미지의 모서리를 네모나게 만듭니다. */
-    }
-
-    .card {
-      margin: 10px;
-    }
-
-    .card-title {
-      text-align: center;
-    }
-
-    /* 프로필 이미지 끝*/
-  </style>
-</head>
-
-<body>
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="facebook" viewBox="0 0 16 16">
-      <path
-        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
-      </path>
-    </symbol>
-    <symbol id="instagram" viewBox="0 0 16 16">
-      <path
-        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
-      </path>
-    </symbol>
-    <symbol id="twitter" viewBox="0 0 16 16">
-      <path
-        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
-      </path>
-    </symbol>
-  </svg>
-
-  <header class="p-3 text-bg-dark">
-    <div class="container">
-      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="main.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <svg class="bi me-2" width="60" height="60">
-            <image href="image/turkey.png" />
-          </svg>
-          <span class="fs-4" id="title">7면조</span>
-        </a>
-
-        <ul class="nav nav-pills">
-          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Main</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">방명록</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">MBTI</a></li>
-        </ul>
-      </header>
-    </div>
-  </header>
-
-  <!-- image cardbox -->
-  <section class="team-introduction mb-4">
-    <div class="cardbox">
-      <div class="row">
-        <div class="col-6">
-          <div class="card" style="width: 80%;">
-            <img src="https://velog.velcdn.com/images/dotofi/post/af561952-304a-4b32-9ead-807841b230be/image.jpg"
-              class="card-img-top" alt="Team Member 1">
-            <div class="card-body">
-              <h5 class="card-title">신성훈</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card" style="width: 80%;">
-            <img
-              src="data:image/jpeg;base64,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"
-              class="card-img-top" alt="Team Member 1">
-            <div class="card-body">
-              <h5 class="card-title">박민혁</h5>
-
             $("#mbtiresult").empty();
             $("#mbtiresult").append(temp_html);
         }
@@ -747,106 +583,45 @@
                             class="btn btn-outline-light">다됨!</button>
                     </div>
                 </div>
-
             </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card" style="width: 80%;">
-            <img
-              src="data:image/jpeg;base64,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"
-              class="card-img-top" alt="Team Member 1">
-            <div class="card-body">
-              <h5 class="card-title">신다온</h5>
+            <!--결과창-->
+            <div id="mbtiresult" class="gate" style="max-width: 24rem;">
+                <div id="initres">
+                    <img src="./img/qmark.png" class="card-img-top" style="border-radius: 10px;"" alt=" ...">
+                    <div class="gate-body">
+                        <h5 class="gate-title" style="margin-top: 100px"><b>당신이 궁금합니다!</b></h5>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-6">
-          <div class="card" style="width: 80%;">
-            <img
-              src="data:image/jpeg;base64,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"
-              class="card-img-top" alt="Team Member 1">
-            <div class="card-body">
-              <h5 class="card-title">이민호</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card" style="width: 80%;">
-            <img
-              src="data:image/jpeg;base64,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"
-              class="card-img-top" alt="Team Member 1">
-            <div class="card-body">
-              <h5 class="card-title">홍준빈</h5>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
-  <!-- image cardbox -->
+    <!-- MBTI Block end -->
 
-  <!-- content -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <image href="image/turkey.png" width="30" height="24" />
+                    </svg>
 
-  <!-- MBTI Block -->
-  <div class="mbtiBlock">
-    <div class="cards">
-      <div class="gate" id='gate' style="max-width: 24rem;">
-        <img src=" https://t3.ftcdn.net/jpg/04/67/07/72/360_F_467077250_nXfO07XHpgMadDOymLLQGEVgFF5wXXdk.jpg"
-          class="card-img-top" style="border-radius: 10px;"" alt=" ...">
-        <div class="gate-body">
-          <h5 class="gate-title"><b>Input your MBTI</b></h5>
-          <p class="gate-text">당신의 MBTI를 입력해주세요. <br>이미 잘 알고 계신 당신만의 특징과 <br>아직 잘 모르시는 저희 팀원을 설명해드리려구요!</p>
-          <div id="mbti" class="mbti">
-            <div class="input-group input-group-lg">
-              <span class="input-group-text" id="inputGroup-sizing-lg">MBTI</span>
-              <input type="text" class="form-control" id="umbti" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-lg">
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">© 2024 내일배움캠프</span>
             </div>
-          </div>
-          <div style="text-align: center;">
-            <button onclick="ipmbti()" id="confirmbtn" type="button" class="btn btn-outline-light">다됨!</button>
-          </div>
-        </div>
-      </div>
-      <!--결과창-->
-      <div id="mbtiresult" class="gate" style="max-width: 24rem;">
-        <div id="initres">
-          <img src="./img/qmark.png" class="card-img-top" style="border-radius: 10px;"" alt=" ...">
-          <div class="gate-body">
-            <h5 class="gate-title" style="margin-top: 100px"><b>당신이 궁금합니다!</b></h5>
-          </div>
-        </div>
-      </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#twitter"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#instagram"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#facebook"></use>
+                        </svg></a></li>
+            </ul>
+        </footer>
     </div>
-  </div>
-  <!-- MBTI Block end -->
-
-  <div class="container">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-          <svg class="bi" width="30" height="24">
-            <image href="image/turkey.png" width="30" height="24" />
-          </svg>
-
-        </a>
-        <span class="mb-3 mb-md-0 text-muted">© 2024 내일배움캠프</span>
-      </div>
-
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
-              <use xlink:href="#twitter"></use>
-            </svg></a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
-              <use xlink:href="#instagram"></use>
-            </svg></a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
-              <use xlink:href="#facebook"></use>
-            </svg></a></li>
-      </ul>
-    </footer>
-  </div>
 </body>
 
 </html>
