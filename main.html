@@ -300,17 +300,21 @@
 
         #commentsList {
             /* 방명록 목록칸 */
-            width: 60%;
-            height: 60%;
-            padding: 30px;
+            width: 55%;
+            height: 70%;
+            padding: 40px;
             border: 1px solid #ccc;
             border-radius: 20px;
             border-color: #000000;
             box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
-            font-size: 35px;
+            font-size: 15px;
             text-align: left;
             overflow: auto;
+            margin: 200px auto -50px auto;
+        }
 
+        .bang {
+            margin: 20px auto 0px auto;
 
         }
 
@@ -328,10 +332,12 @@
 
         .commentbox {
             /* 댓글 작성칸 */
-            width: 60%;
+            width: 58%;
             height: 30%;
             padding: 30px;
             text-align: left;
+            margin: 30px auto 200px auto;
+
         }
 
         #commentinput {
@@ -412,8 +418,8 @@
             get(commentsRef).then((snapshot) => {
                 const comments = snapshot.val();
                 if (comments) {
-                    displayComments(comments);
-                } else {
+                    const commentsArray = Object.values(comments).sort((a, b) => b.id - a.id);
+                    displayComments(commentsArray); // 수정된 displayComments 함수 호출                
                     console.log("No comments available.");
                 }
             }).catch((error) => {
@@ -427,18 +433,14 @@
             commentsList.innerHTML = ''; // 기존 댓글 목록 초기화
 
             // comments 객체의 각 댓글에 대해 반복
-            for (const commentId in comments) {
-                if (Object.hasOwnProperty.call(comments, commentId)) {
-                    const commentData = comments[commentId];
-                    const comment = commentData.comt;
+            comments.forEach(commentData => {
+        const comment = commentData.comt;
 
-                    // 댓글 항목을 생성하여 댓글 목록에 추가
-                    const li = document.createElement("li");
-                    li.innerHTML = `${comment}`;
-                    commentsList.appendChild(li);
-                }
-            }
-        }
+        // 댓글 항목을 생성하여 댓글 목록에 추가
+        const li = document.createElement("li");
+        li.innerHTML = `${comment}`;
+        commentsList.appendChild(li);
+        })};
 
     </script>
 </head>
@@ -540,8 +542,8 @@
         <div class="commentsList" id="commentsSection"
             style="font-family: 'iceJaram-Rg', sans-serif; font-size: 25px; font-weight: bold;">
             <ul id="commentsList"></ul>
-            <div
-                style="position: absolute; top: 136%; left: 50%; transform: translateX(-50%); font-size: 25px; font-weight: bold;">
+            <div style="position: absolute; top: 150%; left: 50%; transform: translateX(-50%); font-size: 25px; font-weight: bold;"
+                id="bang">
                 방명록</div>
         </div>
 
@@ -549,7 +551,7 @@
             <form id="comment-form">
                 <textarea id="commentinput"
                     style="font-family: 'iceJaram-Rg', sans-serif; font-size: 15px; font-weight: bold;"
-                    placeholder="방명록에 작성한글의 삭제나 수정이 불가하니 신중히 입력하세요"></textarea>
+                    placeholder="방명록에 작성한 글은 삭제나 수정이 불가합니다"></textarea>
 
                 <button id="commentbtn" type="submit" class="btn"
                     style="color : white ; background-color : #070707; font-family: 'iceJaram-Rg', sans-serif; font-size: 15px; font-weight: bold;">방명록
