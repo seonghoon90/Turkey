@@ -86,11 +86,11 @@
             } else {
                 alert("당신은 흥미로운 " + res + " 시군요!");
                 opresult(res);
+                $("#initres").fadeToggle(1000);
             };
         };
         // 입력된 값(mbti)로 html을 생성하는 함수
         function opresult(res) {
-            $("#initres").toggle();
             // 입력된 mbti를 바탕으로 저장된 변수를 불러옴
             let mbtiimgdir = "./img/" + res + ".png";
             let title = title_dic[res];
@@ -194,8 +194,12 @@
                         </div>
                     </div>
                 </div>`;
+            
             $("#mbtiresult").empty();
+            $("#mbtiresult").toggle();
             $("#mbtiresult").append(temp_html);
+            $("#mbtiresult").fadeToggle(1000);
+            
         }
         // 이민호 담당구역 끝----------------------------------------------------------------------------------------
     </script>
@@ -257,6 +261,13 @@
 
         #confirmbtn {
             margin: 30px auto auto auto;
+        }
+
+        .altres {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         /* 이민호 담당구역 끝 */
@@ -578,11 +589,11 @@
 
 
     <!-- MBTI Block -->
-    <div class="mbtiBlock">
+    <div id="mbtiBlock" class="container">
         <div class="cards">
             <div class="gate" id='gate' style="max-width: 24rem;">
                 <img src=" https://t3.ftcdn.net/jpg/04/67/07/72/360_F_467077250_nXfO07XHpgMadDOymLLQGEVgFF5wXXdk.jpg"
-                    class="card-img-top" style="border-radius: 10px;"" alt=" ...">
+                    class="card-img-top" style="border-radius: 10px;" alt=" ...">
                 <div class="gate-body">
                     <h5 class="gate-title"><b>Input your MBTI</b></h5>
                     <p class="gate-text">당신의 MBTI를 입력해주세요. <br>이미 잘 알고 계신 당신만의 특징과 <br>아직 잘 모르시는 저희 팀원을 설명해드리려구요!</p>
