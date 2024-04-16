@@ -194,7 +194,7 @@
                         </div>
                     </div>
                 </div>`;
-            $("#mbtiresult").empty();    
+            $("#mbtiresult").empty();
             $("#mbtiresult").append(temp_html);
         }
         // 이민호 담당구역 끝----------------------------------------------------------------------------------------
@@ -286,17 +286,161 @@
             border-radius: 50%;
             /* 이미지의 모서리를 네모나게 만듭니다. */
         }
-        
-        .card{
+
+        .card {
             margin: 10px;
         }
 
         .card-title {
             text-align: center;
         }
+
         /* 프로필 이미지 끝*/
 
+
+        #commentsList {
+            /* 방명록 목록칸 */
+            width: 60%;
+            height: 60%;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            border-color: #000000;
+            box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
+            font-size: 35px;
+            text-align: left;
+            overflow: auto;
+
+
+        }
+
+        #commentsList li {
+            border-bottom: 1px solid #ccc;
+            padding: 15px;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            /* 내부 요소를  오른쪽으로 정렬 */
+            align-items: center;
+            /* 수직 정렬을 위해 가운데 정렬 */
+            margin-bottom: 10px;
+        }
+
+        .commentbox {
+            /* 댓글 작성칸 */
+            width: 60%;
+            height: 30%;
+            padding: 30px;
+            text-align: left;
+        }
+
+        #commentinput {
+            width: 100%;
+            height: 60px;
+            margin-bottom: 5px;
+        }
+
+        .commentSection {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js';
+        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js';
+        import { getDatabase, ref, child, get, set } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBCH1-6bEY4iCTu3imPhd6h3szjIYCj010",
+            authDomain: "turkey-26992.firebaseapp.com",
+            databaseURL: "https://turkey-26992-default-rtdb.firebaseio.com",
+            projectId: "turkey-26992",
+            storageBucket: "turkey-26992.appspot.com",
+            messagingSenderId: "15954825601",
+            appId: "1:15954825601:web:bd83f344ef2ae3e72c1880",
+            measurementId: "G-SSTLC4WEP7"
+        };
+
+        // Firebase 초기화
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getDatabase();
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                let comt = document.getElementById("commentinput").value;
+                const guestbookref = ref(db, 'guestbook');
+
+                get(guestbookref).then((snapshot) => {
+                    let lastid = snapshot.val() || 0;
+                    const newid = lastid + 1;
+                    const newcomtref = ref(db, `guestbook_comment/${newid}`);
+
+                    set(newcomtref, {
+                        id: newid,
+                        comt: comt
+
+                    }).then(() => {
+                        alert('작성 완료!');
+                        document.getElementById("commentinput").value = '';
+                        set(guestbookref, newid);
+                        loadComments(); // 댓글 목록 새로고침
+                        // document.getElementById("commentinput").value = '';
+                        // set(guestbookref);
+                        // location.reload();
+                    }).catch((error) => {
+                        console.error('Error saving data:', error);
+                    });
+                }).catch((error) => {
+                    console.error('Error reading last comment id:', error);
+                });
+            });
+            loadComments(); // 페이지 로드 시 댓글 목록 로드
+
+        });
+
+
+        // 댓글 목록을 불러오는 함수
+        function loadComments() {
+            const commentsRef = ref(db, 'guestbook_comment');
+
+            get(commentsRef).then((snapshot) => {
+                const comments = snapshot.val();
+                if (comments) {
+                    displayComments(comments);
+                } else {
+                    console.log("No comments available.");
+                }
+            }).catch((error) => {
+                console.error('Error getting comments: ', error);
+            });
+        }
+
+
+        function displayComments(comments) {
+            const commentsList = document.getElementById("commentsList");
+            commentsList.innerHTML = ''; // 기존 댓글 목록 초기화
+
+            // comments 객체의 각 댓글에 대해 반복
+            for (const commentId in comments) {
+                if (Object.hasOwnProperty.call(comments, commentId)) {
+                    const commentData = comments[commentId];
+                    const comment = commentData.comt;
+
+                    // 댓글 항목을 생성하여 댓글 목록에 추가
+                    const li = document.createElement("li");
+                    li.innerHTML = `${comment}`;
+                    commentsList.appendChild(li);
+                }
+            }
+        }
+
+    </script>
 </head>
 
 <body>
@@ -321,7 +465,8 @@
     <header class="p-3 text-bg-dark">
         <div class="container">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                <a href="main.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <a href="main.html"
+                    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                     <svg class="bi me-2" width="60" height="60">
                         <image href="image/turkey.png" />
                     </svg>
@@ -391,6 +536,29 @@
     <!-- image cardbox -->
 
     <!-- content -->
+    <div class="commentSection">
+        <div class="commentsList" id="commentsSection"
+            style="font-family: 'iceJaram-Rg', sans-serif; font-size: 25px; font-weight: bold;">
+            <ul id="commentsList"></ul>
+            <div
+                style="position: absolute; top: 136%; left: 50%; transform: translateX(-50%); font-size: 25px; font-weight: bold;">
+                방명록</div>
+        </div>
+
+        <div class="commentbox">
+            <form id="comment-form">
+                <textarea id="commentinput"
+                    style="font-family: 'iceJaram-Rg', sans-serif; font-size: 15px; font-weight: bold;"
+                    placeholder="방명록에 작성한글의 삭제나 수정이 불가하니 신중히 입력하세요"></textarea>
+
+                <button id="commentbtn" type="submit" class="btn"
+                    style="color : white ; background-color : #070707; font-family: 'iceJaram-Rg', sans-serif; font-size: 15px; font-weight: bold;">방명록
+                    작성</button>
+
+            </form>
+        </div>
+    </div>
+
 
     <!-- MBTI Block -->
     <div class="mbtiBlock">
