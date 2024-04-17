@@ -81,12 +81,12 @@
             var res = $("#umbti").val().toUpperCase();
             res = verifymbti(res);
             console.log(res);
-            if (res.length > 4) {
-                alert("제대로 된 mbti가 아닌것 같은데요!");
-            } else {
+            if (res.length == 4) {
                 alert("당신은 흥미로운 " + res + " 시군요!");
                 opresult(res);
                 $("#initres").fadeToggle(1000);
+            } else {
+                alert("제대로 된 mbti가 아닌것 같은데요!");
             };
         };
         // 입력된 값(mbti)로 html을 생성하는 함수
@@ -263,13 +263,6 @@
             margin: 30px auto auto auto;
         }
 
-        .altres {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
         /* 이민호 담당구역 끝 */
         /* 프로필 이미지*/
         .team-introduction {
@@ -294,15 +287,11 @@
         }
 
         .team-introduction img {
-            border-radius: 30%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            margin: 15px;
+            border-radius: 50%;
+            /* 이미지의 모서리를 네모나게 만듭니다. */
         }
 
         .card {
-            align-items: center;
             margin: 10px;
         }
 
