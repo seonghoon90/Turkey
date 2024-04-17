@@ -232,12 +232,12 @@
 
         body {
             position: relative;
-            padding-top: 100px; /
+            padding-top: 100px;/
         }
 
         #title {
             margin-left: 30px;
-            margin-bottom: 8px;
+            margin-bottom: 9px;
         }
 
         /* 이민호 담당구역 시작 */
@@ -461,6 +461,55 @@
             margin: auto 30px auto auto;
 
         }
+
+        .contentRight {
+            width: 700px;
+            height: 900px;
+            margin: 55px auto auto 40px;
+            border: 1px solid rgb(209, 209, 209);
+            border-radius: 20px;
+            float: left;
+        }
+
+        .profile_header {
+            width: 100%;
+            height: 40%;
+            box-sizing: border-box;
+        }
+
+        .profile_contnet {
+            width: 100%;
+            height: 60%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .profileBox {
+            width: 350px;
+            height: 350px;
+            border-radius: 40%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            background-image: url('https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202403/09/21e88381-7867-410a-b0c3-5d6c9cd430b1.jpg');
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .profile {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* <div class="contentRight">
+            <div class="profile_header">
+                <div class="box" style="background: #BDBDBD;">
+                    <img class="profile" src="/images/tistory.JPG">
+                </div>
+            </div> */
     </style>
 
     <script type="module">
@@ -590,12 +639,12 @@
                 </a>
                 <ul class="nav nav-pills">
                     <li class="nav-item" id="mainClick"><a href="#" class="nav-link active" aria-current="page"
-                            onclick="$('html, body').stop().animate( { scrollTop : '200' } );">Main</a>
+                            onclick="$('html, body').stop().animate( { scrollTop : '100' } );">Main</a>
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link"
                             onclick="$('html, body').stop().animate( { scrollTop : '1000' } );"">방명록</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"
-                                onclick="$('html, body').stop().animate( { scrollTop : '2500' } );"">MBTI</a></li>
+                    <li class=" nav-item"><a href="#" class="nav-link"
+                                onclick="$('html, body').stop().animate( { scrollTop : '1800' } );"">MBTI</a></li>
                 </ul>
             </nav>
         </div>
@@ -654,9 +703,22 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="contentRight">
+                                        <div class="profile_header">
+                                            <div class="box profileBox">
+                                            </div>
+                                        </div>
+
+                                        <div class="profile_contnet">
+                                            dsadsadasdasdasdasdassadsadasdsadasdaaaaaaaaaaaaaaaaaaaaa <br>
+                                            dsadsadasdasdasdasdassadsadasdsadasdaaaaaaaaaaaaaaaaaaaaa <br>
+                                            dsadsadasdasdasdasdassadsadasdsadasdaaaaaaaaaaaaaaaaaaaaa <br>
+                                            dsadsadasdasdasdasdassadsadasdsadasdaaaaaaaaaaaaaaaaaaaaa <br>
+                                            dsadsadasdasdasdasdassadsadasdsadasdaaaaaaaaaaaaaaaaaaaaa <br>
+                                        </div>
+                                    </div>
                                     </section>
                                     <!-- profile image cardbox -->
-
                                     <!-- content -->
                                     <div class="commentSection">
                                         <div class="commentsList" id="commentsSection"
