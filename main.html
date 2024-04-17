@@ -412,9 +412,19 @@
             margin: 200px auto -50px auto;
         }
 
-        .bang {
-            margin: 20px auto 0px auto;
+        #commentsSection {
+            position: relative;
+            /* 이 요소를 상대 위치로 설정하여 내부의 절대 위치 요소들을 올바르게 배치할 수 있게 함 */
+        }
 
+        #bang {
+            top: 195px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 25px;
+            font-weight: bold;
+            width: auto;
+            text-align: center;
         }
 
         #commentsList li {
@@ -438,7 +448,11 @@
             margin: 30px auto 200px auto;
             position: relative;
             /* position 속성 추가 */
+        }
 
+        #bang {
+            margin: 30px auto 200px auto;
+            position: relative;
 
         }
 
@@ -502,6 +516,8 @@
             height: 100%;
             object-fit: cover;
         }
+
+
 
 
         /* <div class="contentRight">
@@ -721,12 +737,12 @@
     <!-- profile image cardbox -->
     <!-- content -->
     <div class="commentSection">
+        <div style="font-size: 25px; font-weight: bold;" id="bang">
+            방명록</div>
         <div class="commentsList" id="commentsSection"
             style="font-family: 'iceJaram-Rg', sans-serif; font-size: 25px; font-weight: bold;">
             <ul id="commentsList"></ul>
-            <div style="position: absolute; top: 151%; left: 50%; transform: translateX(-50%); font-size: 25px; font-weight: bold;"
-                id="bang">
-                방명록</div>
+
         </div>
 
         <div class="commentbox">
