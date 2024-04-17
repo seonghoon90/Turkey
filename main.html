@@ -157,14 +157,16 @@
             let member2blink = member2[4];
 
             let temp_html = `<div id="altres">
-                    <div class="card bg-transparent border-light mb-3">
-                        <img src=${mbtiimgdir} class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">${title}</h5>
-                            <p class="card-text">${detail}</p>
+                    <div id="top-block" class="container">
+                        <div class="card bg-transparent border-light mb-3">
+                            <a data-tooltip="이것이 나?" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-${res}"
+                                target="_blank"><img src=${mbtiimgdir} class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <h5 class="card-title">${title}</h5>
+                                <p class="card-text">${detail}</p>
+                            </div>
                         </div>
                     </div>
-                    <a href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-${res}" target="_blank" class="btn btn-outline-info btn-sm">이것이나?</a>
                     <div class="column" style="margin: 50px auto auto auto;">
                         <div class="card bg-transparent border-light mb-3" style="max-width: 540px;">
                             <div class="row g-0">
@@ -261,6 +263,74 @@
 
         #confirmbtn {
             margin: 30px auto auto auto;
+        }
+
+        #top-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+
+        }
+
+        .card-img-top {
+            border-radius: 10px;
+            transition: 1s;
+        }
+
+        .card-img-top:hover {
+            opacity: 0.5;
+        }
+
+        [data-tooltip] {
+            position: relative;
+        }
+
+        [data-tooltip]:before,
+        [data-tooltip]:after {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            transition: all .2s ease;
+            font-size: 11px;
+            font-family: dotum;
+            letter-spacing: -1px;
+        }
+
+        [data-tooltip]:before {
+            content: attr(data-tooltip);
+            height: 25px;
+            position: absolute;
+            top: -20px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #fff;
+            background: #025272;
+            box-shadow: 0 3px 8px rgba(165, 165, 165, 0.5);
+        }
+
+        [data-tooltip]:after {
+            content: '';
+            border-left: 5px solid transparent;
+            top: 2px;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #025272;
+        }
+
+        [data-tooltip]:not([data-tooltip=""]):hover:before {
+            visibility: visible;
+            opacity: 1;
+            top: -30px
+        }
+
+        [data-tooltip]:not([data-tooltip=""]):hover:after {
+            visibility: visible;
+            opacity: 1;
+            top: -8px
         }
 
         /* 이민호 담당구역 끝 */
@@ -585,11 +655,13 @@
     <div id="mbtiBlock" class="container">
         <div class="cards">
             <div class="gate" id='gate' style="max-width: 24rem;">
-                <img src=" https://t3.ftcdn.net/jpg/04/67/07/72/360_F_467077250_nXfO07XHpgMadDOymLLQGEVgFF5wXXdk.jpg"
-                    class="card-img-top" style="border-radius: 10px;" alt=" ...">
+                <a data-tooltip="나를 알아보러." href="https://www.16personalities.com/ko/%EB%AC%B4%EB%A3%8C-%EC%84%B1%EA%B2%A9-%EC%9C%A0%ED%98%95-%EA%B2%80%EC%82%AC"
+                    target="_blank"><img
+                        src=" https://t3.ftcdn.net/jpg/04/67/07/72/360_F_467077250_nXfO07XHpgMadDOymLLQGEVgFF5wXXdk.jpg"
+                        class="card-img-top" alt=" ..."></a>
                 <div class="gate-body">
-                    <h5 class="gate-title"><b>Input your MBTI</b></h5>
-                    <p class="gate-text">당신의 MBTI를 입력해주세요. <br>이미 잘 알고 계신 당신만의 특징과 <br>아직 잘 모르시는 저희 팀원을 설명해드리려구요!</p>
+                    <h5 class="gate-title"><b>Choose your MBTI</b></h5>
+                    <p class="gate-text">당신의 MBTI를 입력해주세요. <br>잘 알고 계신 당신만의 특징과 <br>잘 모르시는 저희 팀원의 특징을 설명해드리려구요!</p>
                     <div id="mbti" class="mbti">
                         <div class="input-group input-group-lg">
                             <span class="input-group-text" id="inputGroup-sizing-lg">MBTI</span>
