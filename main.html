@@ -572,8 +572,8 @@
             text-align: center;
             border: 1px solid rgb(194, 194, 194);
             border-radius: 40px;
-            height: 110px;
-            padding: 38px;
+            height: auto;
+            padding: 10px;
         }
 
         .profile_link {
@@ -708,50 +708,64 @@
             $('.content_main').hide();
             $('#link_git_id').empty();
             $('#link_blog_id').empty();
+            if (this.id == 'turkeyTeam') {
+                $('#profile_box').css("background-image", "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy9FcFJW-ZmM1RtnCsmZL20mu53eq4DQopSI6VR3wfxsG7Beo8)");
+                $('#profileName').text('🦃칠면조🦃');
+                $('#profileMbti').text('칠면조는 차갑다.');
+                $('#profileTmi').text('우리팀의 약속 : 파이팅');
+                $('.profile_a_word_of_determination_title').text('🎪우리 팀만의 특징과 추구하는 궁극적인 목표!');
+                $('#profileOneText').text('ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ');
+               }
             if (this.id == 'shin') {
+
                 $('#profile_box').css("background-image", "url(https://velog.velcdn.com/images/dotofi/post/af561952-304a-4b32-9ead-807841b230be/image.jpg)");
-                $('#profileName').text('신성훈');
-                $('#profileMbti').text('ISFJ');
-                $('#profileTmi').text('너무 세세하게 계획 짜는 J 아님.');
+                $('#profileName').text('😁 name : 신성훈');
+                $('#profileMbti').text('💎 MBTI : ISFJ');
+                $('#profileTmi').text('TMI : 너무 세세하게 계획 짜는 J 아님.');
                 $('#profileOneText').text('낙오되지 말고 가보자고~~!!');
+                $('.profile_a_word_of_determination_title').text('🎪 각오 한마디!');
                 $('#link_git_id').append(`Github Link : <a href="${'https://github.com/seonghoon90'}"><span>${'https://github.com/seonghoon90'}</span></a>`);
                 $('#link_blog_id').append(`Blog Link : <a href="${'https://velog.io/@dotofi'}"><span">${'https://velog.io/@dotofi'}</span></a>`);
             }
             if (this.id == 'park') {
                 $('#profile_box').css("background-image", "url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnOlqo%2FbtsGAPjj75a%2FG0me3fGsH8jsLfkhuAXpkk%2Fimg.png)");
-                $('#profileName').text('박민혁');
-                $('#profileMbti').text('INTP');
-                $('#profileTmi').text('귀여운거 좋아함');
+                $('#profileName').text('😁 name : 박민혁');
+                $('#profileMbti').text('💎 MBTI : INTP');
+                $('#profileTmi').text('TMI : 귀여운거 좋아함');
                 $('#profileOneText').text('한마디');
+                $('.profile_a_word_of_determination_title').text('🎪 각오 한마디!');
                 $('#link_git_id').append(`Github Link : <a href="${'https://github.com/hanraeul'}"><span>${'https://github.com/hanraeul'}</span></a>`);
                 $('#link_blog_id').append(`Blog Link : <a href="${'https://velog.io/@hanraeul'}"><span">${'https://velog.io/@hanraeul'}</span></a>`);
             }
             if (this.id == 'daon') {
                 $('#profile_box').css("background-image", "url(https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2Ff3ac76f1-efb0-40d1-8d94-9a739b3848b7%2FKakaoTalk_20230423_145912577.jpg?table=block&id=b7aab591-a024-4cfe-83bd-18d3d1012478&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=290&userId=9329cab5-1f91-420f-a16f-1868120f30be&cache=v2)");
-                $('#profileName').text('신다온');
-                $('#profileMbti').text('INTJ');
-                $('#profileTmi').text('강아지를 키운다.');
+                $('#profileName').text('😁 name : 신다온');
+                $('#profileMbti').text('💎 MBTI : INTJ');
+                $('#profileTmi').text('TMI : 강아지를 키운다.');
                 $('#profileOneText').text('우리조.. 화이팅.. ^_^');
+                $('.profile_a_word_of_determination_title').text('🎪 각오 한마디!');
                 $('#link_git_id').append(`Github Link : <a href="${'https://github.com/shin-daon'}"><span>${'https://github.com/shin-daon'}</span></a>`);
                 $('#link_blog_id').append(`Blog Link : <a href="${'https://shindaon.tistory.com/'}"><span">${'https://shindaon.tistory.com/'}</span></a>`);
             }
             if (this.id == 'lee') {
                 $('#profile_box').css("background-image", "url(https://velog.velcdn.com/images/2_minus/post/967c3b19-b34b-45e5-8056-ccd0687e8755/image.jpg)");
-                $('#profileName').text('이민호');
-                $('#profileMbti').text('ESTP');
-                $('#profileTmi').text('고양이 알러지 있는데 고양이 키우고 싶다.');
+                $('#profileName').text('😁 name : 이민호');
+                $('#profileMbti').text('💎 MBTI : ESTP');
+                $('#profileTmi').text('TMI : 고양이 알러지 있는데 고양이 키우고 싶다.');
                 $('#profileOneText').text('제발 따라가자.');
+                $('.profile_a_word_of_determination_title').text('🎪 각오 한마디!');
                 $('#link_git_id').append(`Github Link : <a href="${'https://github.com/2minus'}"><span>${'https://github.com/2minus'}</span></a>`);
                 $('#link_blog_id').append(`Blog Link : <a href="${'https://velog.io/@2_minus'}"><span">${'https://velog.io/@2_minus'}</span></a>`);
             }
             if (this.id == 'hong') {
                 $('#profile_box').css("background-image", "url(https://ca.slack-edge.com/T06B9PCLY1E-U06SF9P0MM3-e3addef6f1d0-512)");
-                $('#profileName').text('홍준빈');
-                $('#profileMbti').text('INFJ');
-                $('#profileTmi').text('항상 졸립고 배가고프다.');
+                $('#profileName').text('😁 name : 홍준빈');
+                $('#profileMbti').text('💎 MBTI : INFJ');
+                $('#profileTmi').text('TMI : 항상 졸립고 배가고프다.');
                 $('#profileOneText').text('다들 힘들겠지만 파이팅 합시다!!');
                 $('#githubLink').text('https://github.com/Hongjunbin');
                 $('#blogLink').text('https://bin2dev.tistory.com');
+                $('.profile_a_word_of_determination_title').text('🎪 각오 한마디!');
                 $('#link_git_id').append(`Github Link : <a href="${'https://github.com/Hongjunbin'}"><span>${'https://github.com/Hongjunbin'}</span></a>`);
                 $('#link_blog_id').append(`Blog Link : <a href="${'https://bin2dev.tistory.com'}"><span">${'https://bin2dev.tistory.com'}</span></a>`);
             }
@@ -806,7 +820,7 @@
             <h2 class="text-center mb-4"></h2>
             <div class="row">
                 <div class="col-6">
-                    <div class="card" style="width: 80%;" id="shin" type="button">
+                    <div class="card" style="width: 80%;" id="turkeyTeam" type="button">
                         <a data-tooltip="팀 소개"><img
                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy9FcFJW-ZmM1RtnCsmZL20mu53eq4DQopSI6VR3wfxsG7Beo8"
                                 class="card-img-top" alt="Team Member 1"></a>
@@ -876,16 +890,17 @@
 
                 <div class="profile_contnet">
                     <div class="profile_text profile_name">
-                        😁 name : <span id="profileName"></span>
+                        <span id="profileName"></span>
                     </div>
                     <div class="profile_text profile_mbti">
-                        💎 MBTI : <span id="profileMbti"></span>
+                        <span id="profileMbti"></span>
                     </div>
                     <div class="profile_text profile_tmi">
-                        TMI : <span id="profileTmi"></span>
+                        <span id="profileTmi"></span>
                     </div>
                     <div class="profile_a_word_of_determination">
-                        <div class="profile_a_word_of_determination_title">🎪 각오 한마디!</div>
+                        <div class="profile_a_word_of_determination_title"></div>
+                        <div id="textTitle"></div>
                         <div class="profile_a_word_of_determination_text" id="profileOneText">
 
                         </div>
