@@ -216,8 +216,10 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Stylish&display=swap');
 
-        * {
+        *:not(#title) {
             .nanum-gothic-regular {
                 font-family: "Nanum Gothic", sans-serif;
                 font-weight: normal;
@@ -244,6 +246,10 @@
         }
 
         #title {
+            font-family: "Stylish", sans-serif;
+            font-weight: 300;
+            font-size: 3000px;
+            font-style: normal;
             margin-left: 30px;
             margin-bottom: 9px;
         }
@@ -779,7 +785,7 @@
                     <svg class="bi me-2" width="60" height="60">
                         <image href="image/turkey.png" />
                     </svg>
-                    <span class="fs-4" id="title">7면조</span>
+                    <span class="fs-4" id="title">7면조 사람들</span>
                 </a>
                 <ul class="nav nav-pills">
                     <li class="nav-item" id="btn1"><a href="#" class="nav-link active" aria-current="page"
