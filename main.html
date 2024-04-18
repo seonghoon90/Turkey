@@ -13,6 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
+
+
         // 이민호 담당구역 시작----------------------------------------------------------------------------------------
         // 팀 텍스트
         // [이니셜, 이름, 설명, Github링크, Blog링크]
@@ -143,8 +145,8 @@
                     if (JSON.stringify(team_l[i]) == JSON.stringify(member1)) {
                         team_l.splice(i, 1);
                         break;
+                    }
                 }
-            }
                 let randIndex = Math.floor(rand * team_l.length);
                 var member2 = team_l[randIndex];
             };
@@ -246,6 +248,19 @@
             margin-bottom: 9px;
         }
 
+        #btn1 .nav-link.active {
+            background-color: black;
+            color: white;
+        }
+
+        #btn2 .nav-link {
+            color: black;
+        }
+
+        #btn3 .nav-link {
+            color: black;
+        }
+
         /* 이민호 담당구역 시작 */
         .mbtiBlock {
             background-color: transparent;
@@ -263,7 +278,7 @@
         }
 
         .gate {
-            
+
 
             border: 1px solid gray;
             padding: 15px;
@@ -489,17 +504,20 @@
             border-radius: 20px;
             float: left;
         }
+
         .profile_header {
             width: 100%;
             height: 40%;
             box-sizing: border-box;
         }
+
         .profile_contnet {
             width: 100%;
             height: 60%;
             box-sizing: border-box;
             padding: 20px;
         }
+
         .profileBox {
             width: 350px;
             height: 350px;
@@ -516,7 +534,8 @@
             height: 100%;
             object-fit: cover;
         }
-        .profile_text{
+
+        .profile_text {
             width: 600px;
             height: 40px;
             margin: 0px auto 0px auto;
@@ -524,12 +543,14 @@
             text-align: center;
             font-weight: bold;
         }
-        .profile_a_word_of_determination{
+
+        .profile_a_word_of_determination {
             width: 600px;
             height: 150px;
             margin: 0px auto 0px auto;
         }
-        .profile_a_word_of_determination_title{
+
+        .profile_a_word_of_determination_title {
             width: 100%;
             height: 45px;
             font-size: 22px;
@@ -537,7 +558,8 @@
             font-weight: bold;
             color: rgb(134, 113, 255);
         }
-        .profile_a_word_of_determination_text{
+
+        .profile_a_word_of_determination_text {
             margin: 0px 60px 0px 60px;
             font-weight: bold;
             font-size: 18px;
@@ -547,33 +569,37 @@
             height: 110px;
             padding: 38px;
         }
-        .profile_link{
+
+        .profile_link {
             width: 600px;
             height: 150px;
             margin: 0px auto 0px auto;
         }
-        .link_box{
+
+        .link_box {
             width: 480px;
             height: auto;
             margin: 30px auto 0px auto;
         }
-        .link_git{
+
+        .link_git {
             font-size: 18px;
             font-weight: bold;
             text-align: right;
         }
-        .link_blog{
+
+        .link_blog {
             font-size: 18px;
             font-weight: bold;
             text-align: right;
         }
-        .content_main{
+
+        .content_main {
             font-size: 70px;
             margin: 400px auto 0px auto;
             text-align: center;
             font-weight: bold;
         }
-
     </style>
 
     <script type="module">
@@ -671,12 +697,12 @@
         };
         $('#profile_on_off').hide();
         $('#contentbox').append('<div class="content_main">🦃 7면조 🦃</div>');
-        $('.card').click(function(){
+        $('.card').click(function () {
             $('#profile_on_off').show();
             $('.content_main').hide();
             $('#link_git_id').empty();
             $('#link_blog_id').empty();
-            if(this.id == 'shin'){
+            if (this.id == 'shin') {
                 $('#profile_box').css("background-image", "url(https://velog.velcdn.com/images/dotofi/post/af561952-304a-4b32-9ead-807841b230be/image.jpg)");
                 $('#profileName').text('신성훈');
                 $('#profileMbti').text('ISFJ');
@@ -685,7 +711,7 @@
                 $('#link_git_id').append(`Github Link : <a href="${'https://github.com/seonghoon90'}"><span>${'https://github.com/seonghoon90'}</span></a>`);
                 $('#link_blog_id').append(`Blog Link : <a href="${'https://velog.io/@dotofi'}"><span">${'https://velog.io/@dotofi'}</span></a>`);
             }
-            if(this.id == 'park'){
+            if (this.id == 'park') {
                 $('#profile_box').css("background-image", "url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnOlqo%2FbtsGAPjj75a%2FG0me3fGsH8jsLfkhuAXpkk%2Fimg.png)");
                 $('#profileName').text('박민혁');
                 $('#profileMbti').text('INTP');
@@ -694,7 +720,7 @@
                 $('#link_git_id').append(`Github Link : <a href="${'https://github.com/hanraeul'}"><span>${'https://github.com/hanraeul'}</span></a>`);
                 $('#link_blog_id').append(`Blog Link : <a href="${'https://velog.io/@hanraeul'}"><span">${'https://velog.io/@hanraeul'}</span></a>`);
             }
-            if(this.id == 'daon'){
+            if (this.id == 'daon') {
                 $('#profile_box').css("background-image", "url(https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2Ff3ac76f1-efb0-40d1-8d94-9a739b3848b7%2FKakaoTalk_20230423_145912577.jpg?table=block&id=b7aab591-a024-4cfe-83bd-18d3d1012478&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=290&userId=9329cab5-1f91-420f-a16f-1868120f30be&cache=v2)");
                 $('#profileName').text('신다온');
                 $('#profileMbti').text('INTJ');
@@ -703,7 +729,7 @@
                 $('#link_git_id').append(`Github Link : <a href="${'https://github.com/shin-daon'}"><span>${'https://github.com/shin-daon'}</span></a>`);
                 $('#link_blog_id').append(`Blog Link : <a href="${'https://shindaon.tistory.com/'}"><span">${'https://shindaon.tistory.com/'}</span></a>`);
             }
-            if(this.id == 'lee'){
+            if (this.id == 'lee') {
                 $('#profile_box').css("background-image", "url(https://velog.velcdn.com/images/2_minus/post/967c3b19-b34b-45e5-8056-ccd0687e8755/image.jpg)");
                 $('#profileName').text('이민호');
                 $('#profileMbti').text('ESTP');
@@ -712,7 +738,7 @@
                 $('#link_git_id').append(`Github Link : <a href="${'https://github.com/2minus'}"><span>${'https://github.com/2minus'}</span></a>`);
                 $('#link_blog_id').append(`Blog Link : <a href="${'https://velog.io/@2_minus'}"><span">${'https://velog.io/@2_minus'}</span></a>`);
             }
-            if(this.id == 'hong'){
+            if (this.id == 'hong') {
                 $('#profile_box').css("background-image", "url(https://ca.slack-edge.com/T06B9PCLY1E-U06SF9P0MM3-e3addef6f1d0-512)");
                 $('#profileName').text('홍준빈');
                 $('#profileMbti').text('INFJ');
@@ -756,12 +782,12 @@
                     <span class="fs-4" id="title">7면조</span>
                 </a>
                 <ul class="nav nav-pills">
-                    <li class="nav-item" id="mainClick"><a href="#" class="nav-link active" aria-current="page"
+                    <li class="nav-item" id="btn1"><a href="#" class="nav-link active" aria-current="page"
                             onclick="$('html, body').stop().animate( { scrollTop : '0' } );">Main</a>
                     </li>
-                    <li class="nav-item"><a href="#" class="nav-link"
+                    <li class="nav-item" id="btn2"><a href="#" class="nav-link"
                             onclick="$('html, body').stop().animate( { scrollTop : '1100' } );">방명록</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"
+                    <li class="nav-item" id="btn3"><a href="#" class="nav-link"
                             onclick="$('html, body').stop().animate( { scrollTop : '1900' } );">MBTI</a></li>
                 </ul>
             </nav>
@@ -776,6 +802,7 @@
             <h2 class="text-center mb-4"></h2>
             <div class="row">
                 <div class="col-6">
+
                     <div class="card" style="width: 80%;" id="shin" type = "button">
                         <a data-tooltip="7면조"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy9FcFJW-ZmM1RtnCsmZL20mu53eq4DQopSI6VR3wfxsG7Beo8"
                             class="card-img-top" alt="Team Member 1"></a>
@@ -788,13 +815,19 @@
                     <div class="card" style="width: 80%;" id="shin" type = "button">
                         <a data-tooltip="대장 칠면조"><img src="https://velog.velcdn.com/images/dotofi/post/af561952-304a-4b32-9ead-807841b230be/image.jpg"
                             class="card-img-top" alt="Team Member 1"></a>
+
+                    <div class="card" style="width: 80%;" id="shin" type="button">
+                        <a data-tooltip="대장 칠면조"><img
+                                src="https://velog.velcdn.com/images/dotofi/post/af561952-304a-4b32-9ead-807841b230be/image.jpg"
+                                class="card-img-top" alt="Team Member 1"></a>
+
                         <div class="card-body">
                             <h5 class="card-title">신성훈</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="card" style="width: 80%;" id="park" type = "button">
+                    <div class="card" style="width: 80%;" id="park" type="button">
                         <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnOlqo%2FbtsGAPjj75a%2FG0me3fGsH8jsLfkhuAXpkk%2Fimg.png"
                             class="card-img-top" alt="Team Member 1">
                         <div class="card-body">
@@ -803,7 +836,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="card" style="width: 80%;" id="daon" type = "button">
+                    <div class="card" style="width: 80%;" id="daon" type="button">
                         <img src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2Ff3ac76f1-efb0-40d1-8d94-9a739b3848b7%2FKakaoTalk_20230423_145912577.jpg?table=block&id=b7aab591-a024-4cfe-83bd-18d3d1012478&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=290&userId=9329cab5-1f91-420f-a16f-1868120f30be&cache=v2"
                             class="card-img-top" alt="Team Member 1">
                         <div class="card-body">
@@ -812,7 +845,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="card" style="width: 80%;" id="lee" type = "button">
+                    <div class="card" style="width: 80%;" id="lee" type="button">
                         <img src="https://velog.velcdn.com/images/2_minus/post/967c3b19-b34b-45e5-8056-ccd0687e8755/image.jpg"
                             class="card-img-top" alt="Team Member 1">
                         <div class="card-body">
@@ -821,7 +854,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="card" style="width: 80%;" id="hong" type = "button">
+                    <div class="card" style="width: 80%;" id="hong" type="button">
                         <img src="https://ca.slack-edge.com/T06B9PCLY1E-U06SF9P0MM3-e3addef6f1d0-512"
                             class="card-img-top" alt="Team Member 1">
                         <div class="card-body">
